@@ -23,6 +23,7 @@ import javax.mail.internet.MimeMultipart;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.io.FileHandler;
 import org.testng.annotations.AfterClass;
@@ -40,7 +41,8 @@ public class BaseTest {
 		options.addArguments("headless");
 		// Must maximize Chrome by `start-maximized`
 		options.addArguments("start-maximized");
-		driver.manage().window().maximize();
+		driver=new ChromeDriver(options);
+		//driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get("http://newtours.demoaut.com");
 	}
