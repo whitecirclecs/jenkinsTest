@@ -35,7 +35,7 @@ public class BaseTest {
 
 	@BeforeClass
 	public void openBrowser() {
-//		System.setProperty("webdriver.chrome.driver", "chromedriver");
+		System.setProperty("webdriver.chrome.driver", "chromedriver");
 //		driver = new ChromeDriver();
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("headless");
