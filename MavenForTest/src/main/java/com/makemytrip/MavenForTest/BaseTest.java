@@ -36,13 +36,9 @@ public class BaseTest {
 	@BeforeClass
 	public void openBrowser() {
 		System.setProperty("webdriver.chrome.driver", "chromedriver");
-//		driver = new ChromeDriver();
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("headless");
-		// Must maximize Chrome by `start-maximized`
-		options.addArguments("start-maximized");
-		driver=new ChromeDriver(options);
-		//driver.manage().window().maximize();
+		driver = new ChromeDriver();
+		
+		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get("http://newtours.demoaut.com");
 	}
