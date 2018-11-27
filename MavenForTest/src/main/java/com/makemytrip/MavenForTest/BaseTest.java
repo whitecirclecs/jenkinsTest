@@ -36,7 +36,10 @@ public class BaseTest {
 	@BeforeClass
 	public void openBrowser() {
 		System.setProperty("webdriver.chrome.driver", "chromedriver");
-		driver = new ChromeDriver();
+		//driver = new ChromeDriver();
+		ChromeOptions ChromeOptions = new ChromeOptions();
+		ChromeOptions.addArguments("--headless", "window-size=1024,768", "--no-sandbox");
+		driver = new ChromeDriver(ChromeOptions);
 		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
